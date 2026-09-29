@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h1>Create an account</h1>
+<p class="muted">Already registered? <a href="{{ url_for('login') }}">Log in here</a>.</p>
+<form method="POST" action="{{ url_for('register') }}" enctype="multipart/form-data">
+  <fieldset>
+    <legend>Account</legend>
+    <label>Username <input type="text" name="username" value="{{ form.username or '' }}" required autofocus></label>
+    <label>Password <input type="password" name="password" required></label>
+  </fieldset>
+  <fieldset>
+    <legend>Your details</legend>
+    <div class="row">
+      <label>First name <input type="text" name="firstname" value="{{ form.firstname or '' }}" required></label>
+      <label>Last name <input type="text" name="lastname" value="{{ form.lastname or '' }}" required></label>
+    </div>
+    <label>Email <input type="email" name="email" value="{{ form.email or '' }}" required></label>
+    <label>Address <textarea name="address" rows="2" required>{{ form.address or '' }}</textarea></label>
+  </fieldset>
+  <fieldset>
+    <legend>Upload a text file (e.g. Limerick.txt)</legend>
+    <input type="file" name="file" accept=".txt">
+  </fieldset>
+  <button type="submit">Register</button>
+</form>
+{% endblock %}

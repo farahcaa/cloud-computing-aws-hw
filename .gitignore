@@ -1,0 +1,5 @@
+users.db
+.secret_key
+uploads/*
+!uploads/.gitkeep
+__pycache__/

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Log in{% endblock %}
+{% block content %}
+<h1>Log in</h1>
+<p class="muted">Enter your username and password to view your information.</p>
+<form method="POST" action="{{ url_for('login') }}">
+  <label>Username <input type="text" name="username" required autofocus></label>
+  <label>Password <input type="password" name="password" required></label>
+  <button type="submit">Log in</button>
+</form>
+<p class="muted">New here? <a href="{{ url_for('index') }}">Create an account</a>.</p>
+{% endblock %}
